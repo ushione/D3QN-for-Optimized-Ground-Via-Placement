@@ -10,13 +10,11 @@ Our paper is under review by IEEE Transactions on Electromagnetic Compatibility.
 - [Get Started](#get-started)
 - [CNN-Inception Model](#cnn-inception-model)
 - [D3QN Model](#d3qn-model)
-	- [Generator](#generator)
-- [Badge](#badge)
-- [Example Readmes](#example-readmes)
-
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
+	- [Train D3QN Model with *random sample*](#train-d3qn-model-with-random-sample)
+	- [Train D3QN Model with *Priority Experience Replay*](#train-d3qn-model-with-priority-experience-replay)
+- [Genetic Algorithm](#genetic-algorithm)
+- [UI for manually optimizing ground-via placement](#ui-for-manually-optimizing-ground-via-placement)
+- [Validity Verification](#validity-verification)
 
 ## Background
 
@@ -28,7 +26,7 @@ Our goal is to find a ground-via placement strategy to achieve the best Electrom
 
 > Demo of placing vias yourself. 
 
-<img src="https://github.com/ushione/D3QN-for-Optimized-Ground-Via-Placement/blob/main/demo.gif" width="320" height="200" alt="demo"/><br/>
+<img id="demo_gif" src="https://github.com/ushione/D3QN-for-Optimized-Ground-Via-Placement/blob/main/demo.gif" width="320" height="200" alt="demo"/><br/>
 
 ## Get Started
 Clone the project and install requirments.
@@ -78,6 +76,10 @@ To train this D3QN Model with ***intensive reward function***, run
     python TrainMyD3QN.py -r intensive
 ```
 
+> Here is the result of the D3QN *(with intensive reward function)* training and learning (note that the algorithm learns and explores the optimal placement).
+> 
+<img id="optimal_placement" src="https://github.com/ushione/D3QN-for-Optimized-Ground-Via-Placement/blob/main/current_optimal_placement.jpg" width="500" height="200" alt="current_optimal_placement"/><br/>
+
 To train this D3QN Model with ***global reward fuction***, run
 ```sh
     python TrainMyD3QN.py -r global
@@ -109,4 +111,31 @@ If you want to use ***Priority Experience Replay*** instead of ***Random Sample*
 
 > In this study, we do not recommend using *Priority Experience Replay* at the same time as applying an intensive reward function, because it increases the computational burden to some extent.
 
+## Genetic Algorithm
 
+We also try to solve an approximation problem using the ***Genetic Algorithm*** (with some tweaks to facilitate GA implementation).
+
+```sh
+    python CompareGA.py
+```
+
+## UI for manually optimizing ground-via placement
+
+If you want to try to manually optimize the ground-via placement, we provide a UI panel.
+
+> After you have pyqt5 installed, run
+```sh
+    python UI.py
+```
+
+Now you can try placing the ground vias manually like in the [demo](#demo_gif. Try to adjust your scheme to minimize the calculation result!
+
+## Validity Verification
+
+In addition to the verification of the algorithm in our paper, we try to traverse every possible solution to find the optimal one. 
+> (Accurately, this is a traversal based on prior knowledge. We know that in the case of fewer vias, ground vias should be placed near the radiation source. Therefore, we only consider candidate positions close to the radiation source (left Three columns). The number of solutions that need to be traversed is 
+*`C(30, 10) = 30045015`*)
+> 
+> You can run `python TraverseEachFinalPlacement.py`, but this may require you to have a GPU. Also it will take a long time to run, so we recommend looking directly at our result log `Log/Enumerate_log.txt` if you are interested. In fact, [this image](#optimal_placement) should be the best solution.
+> 
+> Although due to the use of a neural network to asymptotically act on the value function ***Q<sup>\*</sup>(s<sub>t</sub> , a<sub>t</sub>)***, we cannot guarantee that D3QN will converge to such an optimal solution every time. But it makes sense to demonstrate the effectiveness of our algorithm.
