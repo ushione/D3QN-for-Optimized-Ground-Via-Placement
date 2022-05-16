@@ -48,7 +48,7 @@ To train this CNN-Inception Model, run
     python TrainMyCNN_Inception.py
 ```
 
-The CNN-Inception Model performance *(after 1000 epochs)* vs the number of training samples is as follows：
+The CNN-Inception Model performance *(after 1000 epochs)* vs the number of training samples is as follows：  <span style='font-size:5px;'>&nbsp;&nbsp;&nbsp;&nbsp;[[Back to Top]](#d3qn-for-optimized-ground-via-placement)</span>
 > |  TRAINING EXAMPLES       |     1000      |      2000      |      3000      |      4000      |
 > |:------------------------:|:-------------:|:--------------:|:--------------:|:--------------:|
 > | Training Loss            |     0.8078    |     0.2552     |     0.0963     |     0.0453     |
@@ -59,7 +59,7 @@ The CNN-Inception Model performance *(after 1000 epochs)* vs the number of train
 > | Testing Accuracy (3dB)   |     72.2%     |     97.2%      |     99.7%      |     100%       |
 
 ## D3QN Model
-This is a D3QN Model to optimize the ground-via placement.
+This is a D3QN Model to optimize the ground-via placement.  <span style='font-size:5px;'>&nbsp;&nbsp;&nbsp;&nbsp;[[Back to Top]](#d3qn-for-optimized-ground-via-placement)</span>
 
 ### Train D3QN Model with *random sample*
 
@@ -91,7 +91,7 @@ To train this D3QN Model with ***global reward fuction***, run
 > 
 > In other words, `python TrainMyD3QN.py` = `python TrainMyD3QN.py -m CNN_Inception`.
 > 
-> Here is an example of specifying a D3QN model and training it with global reward function *(The corresponding network structure and weight parameters already exist)*.
+> Here is an example of specifying a D3QN model and training it with global reward function *(The corresponding network structure and weight parameters already exist)*.  <span style='font-size:5px;'>&nbsp;&nbsp;&nbsp;&nbsp;[[Back to Top]](#d3qn-for-optimized-ground-via-placement)</span>
 
 ```sh
     python TrainMyD3QN.py -m DNN_Relu -r global
@@ -109,11 +109,11 @@ If you want to use ***Priority Experience Replay*** instead of ***Random Sample*
     python TrainMyD3QN_PER.py -m CNN_Inception -r global
 ```
 
-> In this study, we do not recommend using *Priority Experience Replay* at the same time as applying an intensive reward function, because it increases the computational burden to some extent.
+> In this study, we do not recommend using *Priority Experience Replay* at the same time as applying an intensive reward function, because it increases the computational burden to some extent. <span style='font-size:5px;'>&nbsp;&nbsp;&nbsp;&nbsp;[[Back to Top]](#d3qn-for-optimized-ground-via-placement)</span>
 
 ## Genetic Algorithm
 
-We also try to solve an approximation problem using the ***Genetic Algorithm*** (with some tweaks to facilitate GA implementation).
+We also try to solve an approximation problem using the ***Genetic Algorithm*** (with some tweaks to facilitate GA implementation). <span style='font-size:5px;'>&nbsp;&nbsp;&nbsp;&nbsp;[[Back to Top]](#d3qn-for-optimized-ground-via-placement)</span>
 
 ```sh
     python CompareGA.py
@@ -128,7 +128,7 @@ If you want to try to manually optimize the ground-via placement, we provide a U
     python UI.py
 ```
 
-Now you can try placing the ground vias manually like in the [demo](#demo_gif). Try to adjust your scheme to minimize the calculation result!
+Now you can try placing the ground vias manually like in the [demo](#demo_gif). Try to adjust your scheme to minimize the calculation result! <span style='font-size:5px;'>&nbsp;&nbsp;&nbsp;&nbsp;[[Back to Top]](#d3qn-for-optimized-ground-via-placement)</span>
 
 ## Validity Verification
 
@@ -138,4 +138,4 @@ In addition to the verification of the algorithm in our paper, we try to travers
 > 
 > You can run `python TraverseEachFinalPlacement.py`, but this may require you to have a GPU. Also it will take a long time to run, so we recommend looking directly at our result log `Log/Enumerate_log.txt` if you are interested. In fact, [this image](#optimal_placement) should be the best solution.
 > 
-> Although due to the use of a neural network to asymptotically act on the value function ***Q<sup>\*</sup>(s<sub>t</sub> , a<sub>t</sub>)***, we cannot guarantee that D3QN will converge to such an optimal solution every time. But it makes sense to demonstrate the effectiveness of our algorithm.
+> Although due to the use of a neural network to asymptotically act on the value function ***Q<sup>\*</sup>(s<sub>t</sub> , a<sub>t</sub>)***, we cannot guarantee that D3QN will converge to such an optimal solution every time. But it makes sense to demonstrate the effectiveness of our algorithm. <span style='font-size:5px;'>&nbsp;&nbsp;&nbsp;&nbsp;[[Back to Top]](#d3qn-for-optimized-ground-via-placement)</span>
