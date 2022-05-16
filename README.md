@@ -3,7 +3,7 @@
 
 PyTorch implementation of the paper "Deep Reinforcement Learning-based Intelligent Design Strategy for Ground-Via Placement of System-in-Package".
 
-Our paper is under review by IEEE Transactions on Electromagnetic Compatibility.
+Our paper is under review by *IEEE Transactions on Electromagnetic Compatibility*.
 
 ## Table of Contents
 
