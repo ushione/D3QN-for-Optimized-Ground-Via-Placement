@@ -101,7 +101,7 @@ To train this D3QN Model with ***global reward fuction***, run
 
 > Prioritized Experience Replay is a sampling method to focus on more valuable experiences and improve data utilization and training speed. In particular, it is often used in problems with sparse rewards.
 > 
-> *T. Schaul, J. Quan, I. Antonoglou, and D. Silver, “Prioritized experience replay,” arXiv preprint arXiv:1511.05952, 2015.*
+> *Schaul, Tom, et al. "Prioritized experience replay." arXiv preprint [arXiv:1511.05952 (2015)](https://arxiv.org/abs/1511.05952).*
 
 If you want to use ***Priority Experience Replay*** instead of ***Random Sample*** during training the D3QN *(with global reward)*, run
 
