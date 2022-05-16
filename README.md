@@ -1,4 +1,6 @@
 # D3QN-for-Optimized-Ground-Via-Placement
+![python_verion](https://user-images.githubusercontent.com/87009163/168636733-f6c303bd-6f3f-4215-b008-c37ea05c0921.svg)
+
 PyTorch implementation of the paper "Deep Reinforcement Learning-based Intelligent Design Strategy for Ground-Via Placement of System-in-Package".
 
 Our paper is under review by IEEE Transactions on Electromagnetic Compatibility.
