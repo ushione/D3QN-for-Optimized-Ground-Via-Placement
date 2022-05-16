@@ -128,7 +128,7 @@ If you want to try to manually optimize the ground-via placement, we provide a U
     python UI.py
 ```
 
-Now you can try placing the ground vias manually like in the [demo](#demo_gif. Try to adjust your scheme to minimize the calculation result!
+Now you can try placing the ground vias manually like in the [demo](#demo_gif). Try to adjust your scheme to minimize the calculation result!
 
 ## Validity Verification
 
