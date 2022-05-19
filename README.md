@@ -44,6 +44,17 @@ Clone the project and install requirments.
 This is a CNN-Inception Model for predicting *H<sub>out</sub>* .
 
 Folder `Data` contains Train Set `add.csv` and Test Set `test.csv`.
+> Note that this is a dataset formed by readjusting and integrating the data in the article. Reshape the vector *V* of the first 100 columns of each row in the table to form a matrix *M* representing the placement strategy. Also, if you want to compare the illustration *M_* in the article, rotate this matrix *M* 90° clockwise. If you are interested in the original dataset, please contact us further. Here is an example of preprocessing data with correlation functions:
+
+```python
+    import numpy as np
+    # np.shape(V) = (1, 100)
+    M = V.shape(10, 10)
+    # np.shape(M) = (10, 10)
+    
+    # The result of rotating the matrix M clockwise by 90° corresponds to the placement strategy M_ in the illustration of the article
+    # M_ = np.rot90(M, 1)
+```
 
 To train this CNN-Inception Model, run
 ```sh
