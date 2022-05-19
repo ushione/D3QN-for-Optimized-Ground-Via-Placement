@@ -53,7 +53,7 @@ Folder `Data` contains Train Set `add.csv` and Test Set `test.csv`.
     # np.shape(M) = (10, 10)
     
     # The result of rotating the matrix M clockwise by 90° corresponds to the placement strategy M_ in the illustration of the article
-    # M_ = np.rot90(M, 1)
+    # M_ = np.rot90(M, -1)
 ```
 
 To train this CNN-Inception Model, run
