@@ -49,7 +49,7 @@ Folder `Data` contains Train Set `add.csv` and Test Set `test.csv`.
 ```python
     import numpy as np
     # np.shape(V) = (1, 100)
-    M = V.shape(10, 10)
+    M = np.reshape(V, (10, 10))
     # np.shape(M) = (10, 10)
     
     # The result of rotating the matrix M clockwise by 90° corresponds to the placement strategy M_ in the illustration of the article
