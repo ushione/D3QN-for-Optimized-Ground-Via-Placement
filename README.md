@@ -5,6 +5,8 @@ PyTorch implementation of the paper "Deep Reinforcement Learning-based Intellige
 
 Our paper is under review by *IEEE Transactions on Electromagnetic Compatibility*.
 
+Updates: Our paper has been accepted by *IEEE TEMC*. [2022/11/08]
+
 ## Table of Contents
 
 - [Background](#background)
